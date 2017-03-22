@@ -2,13 +2,35 @@
 <html>
   <head>
     <title>Blog</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="sidebar">
+      <div id="logo">
+        <%= link_to root_path do %>
+          <%= image_tag "wm.jpg" %>
+        <% end %>
+      </div>
+
+      <ul>
+        <li class="category">Website</li>
+        <li><%= link_to "Blog", root_path %></li>
+
+      </ul>
+
+      <ul>
+        <li class="category">Social</li>
+        <li><a href="mailto:dpjames29@gmail.com">Email</a></li>
+      </ul>
+
+
+
+      <%= yield %>
+    </div>
   </body>
 </html>
